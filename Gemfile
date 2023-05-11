@@ -23,6 +23,7 @@ end
 group :test do
   gem "capybara"
   gem "guard"
+  gem 'guard-rspec', require: false
 end
 
 group :development do

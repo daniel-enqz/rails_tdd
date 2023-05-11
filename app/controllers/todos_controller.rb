@@ -1,12 +1,13 @@
 class TodosController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user
 
   def index
-    @todos = Todo.all
+    @todos = Todo.all.where(email: session[:current_email])
   end
 
   def create
     @todo = Todo.new(todo_params)
+    @todo.email = session[:current_email]
     if @todo.save
       flash[:notice] = "Todo was created successfully."
       redirect_to root_path

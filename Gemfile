@@ -19,12 +19,13 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
   gem "pry"
+  gem "guard"
+  gem 'guard-rspec', require: false
 end
 
 group :test do
   gem "capybara"
-  gem "guard"
-  gem 'guard-rspec', require: false
+  gem "database_cleaner"
 end
 
 group :development do

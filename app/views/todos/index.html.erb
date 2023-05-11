@@ -1,0 +1,13 @@
+<h1>Todos</h1>
+
+<%= form_for Todo.new do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<ul class="todos">
+  <% @todos.each do |todo| %>
+    <li><%= todo.title %></li>
+  <% end %>
+</ul>

@@ -9,7 +9,9 @@
 <ul class="todos">
   <% @todos.each do |todo| %>
     <%= todo_item(todo) %>
-    <% unless todo.completed? %>
+    <% if todo.completed? %>
+      <%= button_to "Undo", todo_done_path(todo), method: :delete %>
+    <% else %>
       <%= button_to "Mark as done", todo_done_path(todo) %>
     <% end %>
   <% end %>

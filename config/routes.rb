@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "todos#index"
 
-  resources :todos, only: [:index, :create, :destroy]
+  resources :todos, only: [:index, :create, :destroy] do
+    resource :done, only: [:create]
+  end
 
   resource :user_session, only: [:new, :create, :destroy]
 end

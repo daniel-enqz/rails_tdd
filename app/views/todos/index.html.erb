@@ -8,11 +8,9 @@
 
 <ul class="todos">
   <% @todos.each do |todo| %>
-    <% if todo.completed? %> 
-      <li class="completed"><%= todo.title %></li>
-    <% else %>
-      <li><%= todo.title %></li>
+    <%= todo_item(todo) %>
+    <% unless todo.completed? %>
       <%= button_to "Mark as done", todo_done_path(todo) %>
     <% end %>
   <% end %>
-</ul> 
+</ul>

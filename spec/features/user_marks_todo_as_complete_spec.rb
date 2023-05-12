@@ -8,6 +8,6 @@ feature "User marks todo as complete" do
 
     click_on "Mark as done"
 
-    expect(page).to display_completed_todo "Buy milk"
+    expect(page).to display_todo "Buy milk", completed: true
   end
 end

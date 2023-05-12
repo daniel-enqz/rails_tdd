@@ -4,9 +4,11 @@ module Features
     click_button 'Submit'
   end
 
-  def display_completed_todo(title)
-    have_css '.todos li.completed', text: title
+
+  def display_todo(title, options = {})
+    completed_class = options[:completed] ? '.completed' : ''
+    have_css ".todos li#{completed_class}", text: title
   end
 end
-    
+
 

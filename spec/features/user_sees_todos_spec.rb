@@ -6,7 +6,7 @@ feature "User sees todos" do
 
     sign_in_as "person@example.com"
 
-    expect(page).not_to have_css ".todos li", text: "Buy milk"
+    expect(page).not_to display_todo "Plan party"
   end
 end
   

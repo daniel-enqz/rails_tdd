@@ -9,5 +9,8 @@
 <ul class="todos">
   <% @todos.each do |todo| %>
     <li><%= todo.title %></li>
+    <% unless todo.completed? %>
+      <%= button_to "Mark as done", done_todo_path(todo), method: :patch %>
+    <% end %>
   <% end %>
-</ul>
+</ul> 
